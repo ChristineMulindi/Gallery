@@ -1,0 +1,27 @@
+{%extends 'base.html'%}
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="row">
+            {% if all_images%}
+
+            {% else %}
+            <h2> Found 0 images for the search term {{message}}</h2>
+            {% endif %}
+
+        </div>
+    </div>
+    <div class="row">
+        {% for image in all_images %}
+
+
+        <div class="col-md-3 col-sm-4 col-xs-12 single_portfolio_text">
+            <img src="{{image.image_path.url}}" alt="" />
+            
+        </div>
+
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
